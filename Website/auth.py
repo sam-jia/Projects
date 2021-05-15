@@ -27,23 +27,6 @@ def login_post():
             flash('Invalid credentials, please check your email and password')
             return redirect(url_for('auth.login'))
 
-
-
-    #email = request.form.get('email')
-    #password = request.form.get('password')
-    #remember = True if request.form.get('remember') else False
-#
-    #user = User.query.filter_by(email=email).first()
-
-    #if not user or not check_password_hash(user.password, password):
-    #    flash('Incorrect password, please try again.')
-    #    return redirect(url_for('auth.login'))
-
-    #login_user(user, remember=remember)
-    #return redirect(url_for('main.home'))
-
-
-
 @auth.route('/signup')
 def signup():
     return render_template('Sign_up.html')
@@ -61,34 +44,6 @@ def signup_post():
         db.session.commit()
         flash('You account has been registered!')
         return redirect(url_for('auth.login'))
-
-    #email = request.form.get('email')
-    #first_name = request.form.get('first_name')
-    #last_name = request.form.get('last_name')
-    #password = request.form.get('password')
-    #password_check = request.form.get('password1')
-    
-    #if(email == null):
-    #    flash("Please enter a valid email address!")                                                                                                                                                                                             
-    #    return redirect(url_for('auth.signup'))
-
-    #if (password != password_check):
-    #    flash('Password must be the same!')
-    #    return redirect(url_for('auth.signup'))
-
-    #user = User.query.filter_by(email=email).first()
-
-    #if user:
-    #    flash('Email address already exists!')
-    #    return redirect(url_for('auth.login')) #redirect user to login page if email already exists
-    
-    #new_user = User(email=email, first_name=first_name, last_name=last_name, password = generate_password_hash(password, method='sha256'))
-
-    #db.session.add(new_user)
-    #db.session.commit()  
-
-    #return redirect(url_for('auth.login'))
-
 
 @auth.route('/logout')
 @login_required
