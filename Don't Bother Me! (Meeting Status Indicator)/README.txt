@@ -11,6 +11,7 @@ Software:
 	Zoom Integration:
 		Reads task list and attempt to find the zoom meeting process (CptHost.exe).
 		If found: light turns red, if not; light turns green.
+		Short Video Demo: https://www.youtube.com/watch?v=RdmqkNnClcM
 	MS Teams Integration:
 		Reads MS Teams logs stored in local user folder. 
 		Extract lines with regex that contains the presence status (Available, Busy, Do Not Disturb and etc.)
